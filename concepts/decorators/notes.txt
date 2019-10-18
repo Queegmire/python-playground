@@ -1,0 +1,4 @@
+Decorators with parameters in Python
+    https://www.geeksforgeeks.org/decorators-with-parameters-in-python/
+Python 3 Patterns, Recipes and Idioms
+    https://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html#decorators-with-arguments
