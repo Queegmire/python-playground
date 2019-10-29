@@ -1,0 +1,21 @@
+Basic f string:
+    f'Value of foo = {foo}'
+String !s (default)
+    f'Str of foo = {foo!s}'
+Repr !r
+    f'Repr of foo = {foo!r}'
+Ascii !a
+    f'Ascii of foo = {foo!a}'
+Multiline (multiline output)
+    f'''Foo on the line below
+    {foo}'''
+Continuation (single line output)
+    f'Line one {foo}' \
+    f'Line two {bar}'
+Format specifiers
+    Example: right aligned in 30 columns with '.' as padding
+        f'{number:.>30}
+    Specifier values can be evaluated:
+    Same as example above but with x columns
+        f'{number:.>{x}}
+
