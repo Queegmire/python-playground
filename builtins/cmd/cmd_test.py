@@ -1,15 +1,30 @@
 import cmd
 
-class MyCmd(cmd.Cmd):
-    def __init__(self, prompt):
-        self.line = 0
-        self.prompt = prompt
-        super().__init__()
-    
-def main():
-    mc = MyCmd("hi")
-    while True:
-        mc.cmdloop()
+class CalcShell(cmd.Cmd):
+    intro = 'Brew time\n'
+    state = 0
+    prompt = f'{state}> '
 
-if __name__ == "__main__":
-    main()
+    def do_add(self, arg):
+        self.state += parse(arg)
+        self.prompt = f'{self.state} :'
+
+    def do_sub(self, arg):
+        self.state -= parse(arg)
+        self.prompt = f'{self.state} :'
+
+    def do_mul(self, arg):
+        self.state *= parse(arg)
+        self.prompt = f'{self.state} :'
+
+    def do_bye(self, arg):
+        return True
+
+    def close(self):
+        pass
+
+def parse(arg):
+    return int(arg)
+
+if __name__ == '__main__':
+    CalcShell().cmdloop()
