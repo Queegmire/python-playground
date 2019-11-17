@@ -19,3 +19,21 @@ Format specifiers
     Same as example above but with x columns
         f'{number:.>{x}}
 
+
+.format is still useful for templating
+        x = 'Hello {foo}'
+        foo = 'World'
+        x.format(foo=foo) # Hello World
+        foo = 'Moon'
+        x.format(foo=foo) # Hello Moon
+    F-strings are evluatted imediately
+        foo = 'World'
+        x = f'Hello {foo}'
+        x # Hello World
+        foo = "Moon"
+        x # Hello World
+
+
+Add %, .format and tempate info
+Add mini-language info
+
